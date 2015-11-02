@@ -33,7 +33,7 @@ def get_latest_tweets(screen_name):
 	print "%s tweets downloaded so far"%(count)
 	latest_tweets.extend(new_tweets)
 	print latest_tweets[0].id
-	while len(new_tweets) >= 200:
+	while len(new_tweets) == 200:
 		#print "getting latest tweets\n"
 		new_tweets=api.user_timeline(screen_name=screen_name,max_id=old,since_id=since_Id,count=200)
 		count = count + len(new_tweets)
